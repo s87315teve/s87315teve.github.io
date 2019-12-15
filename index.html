@@ -1,11 +1,212 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Document</title>
-	</head>
-	<body>
-		<h1>Test h1</h1>
-		<h2>Test h2</h2>
-	</body>
-</html>
+<h1 id="github">github工作坊</h1>
+
+<h2 id="git">git教學</h2>
+
+<p>安裝:
+gitbash
+github desktop</p>
+
+<p>git基本指令:
+git init
+git status
+git add 
+git commit 
+git push
+git pull
+git clone</p>
+
+<p>操作步驟:
+1.打開bash
+2.在指定資料夾下輸入 git init
+3.輸入git add . (.是此資料夾的所有目錄)
+4.輸入git commit -m "想說的註解"</p>
+
+<p>github網頁:https://github.com/jerry871002/1214-ece-course/tree/master</p>
+
+<p>github圖像化:https://git-school.github.io/visualizing-git/
+git commit
+git branch new<em>branch
+git branch
+git checkout new</em>branch
+git checkout master
+git merge new_branch
+git reset (編號)   //編號可以用git log確認</p>
+
+<p><img src="https://i.imgur.com/n37JVSP.png" alt="" />
+<img src="https://i.imgur.com/EmG0o2g.png" alt="" /></p>
+
+<h1 id="test">工作坊test</h1>
+
+<h2 id="">小標題</h2>
+
+<h3 id="-1">小小標題</h3>
+
+<p>This is <em>italic</em>
+This is <strong>bold</strong>
+This is <strong><em>italic and bold</em></strong></p>
+
+<ul>
+<li>A</li>
+
+<li>B</li>
+
+<li>C</li>
+
+<li>D
+
+
+<ul>
+<li>A</li>
+
+<li>B</li>
+
+<li>C</li>
+
+<li>D</li></ul>
+</li>
+</ul>
+
+<ol>
+<li>A</li>
+
+<li>B</li>
+
+<li>C</li>
+
+<li>D</li>
+</ol>
+
+<h2 id="image">Image</h2>
+
+<p><img src="https://imasoku.com/wp-content/uploads/2019/02/ZzfXWCj.jpg" alt="" />
+<img src="QAQ" alt="A image" /></p>
+
+<h2 id="link">link</h2>
+
+<p><a href="https://www.facebook.com/">facebook</a></p>
+
+<blockquote>
+  <p>this is a quote</p>
+</blockquote>
+
+<pre><code class="c language-c">int main(){
+    return
+}
+</code></pre>
+
+<pre><code class="python language-python">if 
+elif
+</code></pre>
+
+<p>Integer is represent as <code>int</code> in <code>c</code></p>
+
+<p>default|align left|align center|align right|
+-----|:-----|:------:|-----:|
+aaa  |bbb   |ccc     |ddd   |
+eee|fff|ggg|hhh|</p>
+
+<h1 id="-2">以下是練習</h1>
+
+<h1 id="1101">11/01 技術部部聚</h1>
+
+<p>實用工具：HUGO  (.md轉html)</p>
+
+<p>先把教材放上來</p>
+
+<ul>
+<li><p><a href="https://docs.google.com/presentation/d/1YlehUyertsoipIf7xcM4AnQWa1-AVB-vFcNSBDI4cVM/edit?usp=sharing">投影片</a></p></li>
+
+<li><p><a href="https://github.com/jerry871002/1101-ece-course">完成的 GitHub Repository</a></p></li>
+</ul>
+
+<p>今天教的內容有下面四個</p>
+
+<h2 id="-3">終端機</h2>
+
+<h3 id="-4">常用的終端機指令</h3>
+
+<p>Windows    | MacOS / Linux |說明
+:------:|:-------------:|----------
+cd        |cd             |切換目錄
+cd        |pwd            |取得目前所在的位置
+dir        |ls             |列出目前的檔案列表
+mkdir    |mkdir          |建立新的目錄
+無        |touch          |建立檔案
+copy    |cp             |複製檔案
+move    |mv             |移動檔案
+del        |rm             |刪除檔案
+cls        |clear          |清除畫面上的內容</p>
+
+<h2 id="git-1">Git</h2>
+
+<p><img src="https://miro.medium.com/max/380/1*OvMsmQs0Rzs_ScuiTsuWjw.png" alt="git logo" /></p>
+
+<p><a href="https://git-scm.com/">Home Page</a></p>
+
+<h3 id="-5">從維基百科貼下來的內容（注意粗體跟斜體的地方）</h3>
+
+<p><em>git</em>是一個<strong><em>分散式版本控制軟體</em></strong>，最初由<strong>林納斯·托瓦茲</strong>創作，於2005年以GPL釋出。最初目的是為更好地管理Linux核心開發而設計。應注意的是，這與GNU Interactive Tools（一個類似Norton Commander介面的檔案管理器）有所不同。</p>
+
+<p>git最初的開發動力來自於BitKeeper和Monotone。git最初只是作為一個可以被其他前端（比如Cogito或Stgit）包裝的後端而開發的，但後來git核心已經成熟到可以獨立地用作版本控制。很多著名的軟體都使用git進行版本控制，其中包括Linux核心、X.Org伺服器和OLPC核心等專案的開發流程。</p>
+
+<h3 id="-6">指令</h3>
+
+<ul>
+<li><code>git init</code>：初始化一個目錄，讓 Git 開始對這個目錄進行版本控制</li>
+
+<li><code>git status</code>：查詢現在這個目錄的「狀態」</li>
+
+<li><code>git add</code>：把更改的檔案加到暫存區</li>
+
+<li><code>git commit</code>：讓更改的內容永久的存下來</li>
+
+<li><code>git push</code>：把更新的內容上傳到 GitHub</li>
+
+<li><code>git pull</code>：把  GitHub 上的東西拉回來更新</li>
+
+<li><code>git clone</code>：可以把 GitHub 上面的 project 複製一份下來</li>
+</ul>
+
+<h2 id="github-1">GitHub</h2>
+
+<p><img src="https://i.pinimg.com/originals/2c/b6/70/2cb670b6ddd8922a1c1b2fee4f6f758c.jpg" alt="github logo" /></p>
+
+<p><a href="https://github.com/">Home Page</a></p>
+
+<p><a href="https://github.com/jerry871002">My Account</a></p>
+
+<h2 id="markdown">Markdown</h2>
+
+<p><img src="https://cdn.guidingtech.com/media/assets/WordPress-Import/2014/01/markdown-logo2-300x201.png" alt="markdown logo" /></p>
+
+<p><a href="https://markdown.tw/">Home Page</a></p>
+
+<h2 id="-7">貼一段你最近寫的程式吧</h2>
+
+<p>我就貼上次技術部上課的內容好了</p>
+
+<pre><code class="c language-c">int ledPin = 3;
+int potPin = A0;
+
+void setup() {
+  // setup pin modes
+  pinMode(ledPin, OUTPUT);
+  pinMode(potPin, INPUT);
+}
+
+void loop() {
+  // read the value of the pot and store it as potValue
+  int potValue = analogRead(potPin);
+
+  // turn led on and wait for the time equal to potValue
+  digitalWrite(ledPin, HIGH);
+  delay(potValue);
+
+  // re-read the value of the pot and store it as potValue
+  potValue = analogRead(potPin);
+
+  // turn led off and wait for the time equal to potValue
+  digitalWrite(ledPin, LOW);
+  delay(potValue);
+}
+</code></pre>
