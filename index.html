@@ -11,28 +11,28 @@
             --text-color: #333;
             --light-bg: #f9f9f9;
             --accent-color: #394e70;
+            --border-color: #d8deea;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
         }
-        
+
         body {
             color: var(--text-color);
             line-height: 1.6;
             background-color: #ffffff;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        /* Header Styles */
+
         header {
             background-color: var(--primary-color);
             color: white;
@@ -40,7 +40,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .header-content {
             display: flex;
             align-items: center;
@@ -48,73 +48,97 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .profile-section {
             display: flex;
             align-items: center;
             gap: 30px;
         }
-        
+
         .profile-image {
             width: 200px;
             height: 200px;
             border-radius: 50%;
             border: 5px solid white;
             overflow: hidden;
+            flex: 0 0 auto;
         }
-        
+
         .profile-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .name-title h1 {
             font-size: 2.5rem;
             margin-bottom: 5px;
+            letter-spacing: 0;
         }
-        
+
         .name-title h2 {
             font-size: 1.5rem;
             font-weight: normal;
             opacity: 0.9;
         }
-        
-        /* Section Styles */
+
+        .affiliation {
+            margin-top: 8px;
+            font-size: 1.05rem;
+            opacity: 0.86;
+        }
+
+        .bilingual {
+            display: block;
+        }
+
+        .bilingual-en {
+            display: block;
+            color: #666;
+            font-size: 0.95em;
+            font-weight: 400;
+        }
+
+        header .bilingual-en {
+            color: rgba(255, 255, 255, 0.82);
+        }
+
         section {
             padding: 40px 0;
         }
-        
+
         .section-title {
             background-color: var(--primary-color);
             color: white;
-            padding: 10px 20px;
+            padding: 8px 18px;
             margin-bottom: 20px;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
+            border-radius: 4px;
+            letter-spacing: 0;
         }
-        
-        /* About Me */
+
         .about-me {
             background-color: var(--light-bg);
-            padding: 30px;
-            border-radius: 10px;
+            padding: 28px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
             margin-bottom: 30px;
+            min-height: 92px;
         }
-        
-        /* Contact Info */
+
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 15px;
             margin: 20px 0;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        
+
         .contact-icon {
             width: 40px;
             height: 40px;
@@ -123,97 +147,63 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex: 0 0 auto;
         }
-        
+
         .contact-icon svg {
             width: 20px;
             height: 20px;
             fill: white;
         }
-        
+
         .contact-item a {
             color: var(--secondary-color);
             text-decoration: none;
+            overflow-wrap: anywhere;
         }
-        
+
         .contact-item a:hover {
             text-decoration: underline;
         }
-        
-        /* Education */
+
         .education-item {
             margin-bottom: 20px;
         }
-        
+
         .education-item h3 {
             color: var(--secondary-color);
             margin-bottom: 5px;
         }
-        
+
         .education-item p {
             color: #666;
         }
-        
+
         .years {
             font-weight: bold;
             color: var(--accent-color);
         }
-        
-        /* Awards */
-        .awards-list {
+
+        .awards-list,
+        .skills-list,
+        .publications-list {
             list-style: none;
         }
-        
-        .award-item {
+
+        .award-item,
+        .skill-item,
+        .publication-item {
             margin-bottom: 15px;
             padding-left: 20px;
             position: relative;
         }
-        
-        .award-item::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-        
-        .award-year {
-            font-weight: bold;
-            color: var(--accent-color);
-            margin-right: 10px;
-        }
-        
-        /* Skills */
-        .skills-list {
-            list-style: none;
-        }
-        
-        .skill-item {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .skill-item::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-        
-        /* Publications */
-        .publications-list {
-            list-style: none;
-        }
-        
+
         .publication-item {
             margin-bottom: 20px;
-            padding-left: 20px;
-            position: relative;
         }
-        
+
+        .award-item::before,
+        .skill-item::before,
         .publication-item::before {
             content: "•";
             position: absolute;
@@ -222,23 +212,13 @@
             color: var(--accent-color);
             font-weight: bold;
         }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .profile-section {
-                flex-direction: column;
-            }
-            
-            .section-title {
-                font-size: 1rem;
-            }
+
+        .award-year {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-right: 10px;
         }
-        
+
         .decorator {
             position: absolute;
             right: -50px;
@@ -250,7 +230,7 @@
             border-radius: 50%;
             z-index: 1;
         }
-        
+
         .decorator-bottom {
             position: absolute;
             left: -50px;
@@ -262,7 +242,7 @@
             border-radius: 50%;
             z-index: 1;
         }
-        
+
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -271,7 +251,33 @@
             margin-top: 50px;
         }
 
-        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-section {
+                flex-direction: column;
+            }
+
+            .profile-image {
+                width: 170px;
+                height: 170px;
+            }
+
+            .name-title h1 {
+                font-size: 2.1rem;
+            }
+
+            .name-title h2 {
+                font-size: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -287,22 +293,26 @@
                     <div class="name-title">
                         <h1>邱佳詮</h1>
                         <h2>Chia-Chuan Chiu</h2>
-                        <h2>Ph.D Student</h2>
+                        <h2>博士候選人 / Ph.D. Candidate</h2>
+                        <p class="affiliation">
+                            <span class="bilingual">國立陽明交通大學 電機學院博士班</span>
+                            <span class="bilingual-en">College of Electrical and Computer Engineering, National Yang Ming Chiao Tung University</span>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    
+
     <main class="container">
         <section id="about">
-            <div class="about-me">
-                <p>待補充</p>
-            </div>
-            
+            <h2 class="section-title">關於我 / About</h2>
+            <div class="about-me" aria-label="About Chia-Chuan Chiu"></div>
+
+            <h2 class="section-title">聯絡方式 / Contact</h2>
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-icon">
+                    <div class="contact-icon" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                         </svg>
@@ -313,49 +323,62 @@
                         <a href="mailto:steve.ee09@nycu.edu.tw">steve.ee09@nycu.edu.tw</a>
                     </div>
                 </div>
-                
+
                 <div class="contact-item">
-                    <div class="contact-icon">
+                    <div class="contact-icon" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.026-3.061-1.865-3.061-1.867 0-2.153 1.459-2.153 2.966v5.699h-3v-11h2.879v1.504h.041c.401-.759 1.379-1.56 2.839-1.56 3.036 0 3.6 1.999 3.6 4.598v6.458z"/>
                         </svg>
                     </div>
                     <div>
-                        <a href="tel">-</a>
+                        <a href="https://www.linkedin.com/in/c-c-chiu" target="_blank" rel="noopener noreferrer">linkedin.com/in/c-c-chiu</a>
                     </div>
                 </div>
-                
+
                 <div class="contact-item">
-                    <div class="contact-icon">
+                    <div class="contact-icon" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                     </div>
                     <div>
-                        <a href="https://github.com/s87315teve" target="_blank">https://github.com/s87315teve</a>
+                        <a href="https://github.com/s87315teve" target="_blank" rel="noopener noreferrer">github.com/s87315teve</a>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <section id="education">
-            <h2 class="section-title">學歷</h2>
+            <h2 class="section-title">
+                學歷 / Education
+            </h2>
             <div class="education-item">
-                <h3>國立交通大學 電機工程學系</h3>
-                <p><span class="years">2016-2020</span> | Electrical and Computer Engineering, NCTU</p>
+                <h3>
+                    <span class="bilingual">國立交通大學 電機工程學系</span>
+                    <span class="bilingual-en">Department of Electrical and Computer Engineering, National Chiao Tung University</span>
+                </h3>
+                <p><span class="years">2016-2020</span></p>
             </div>
             <div class="education-item">
-                <h3>國立交通大學/國立陽明交通大學 電機學院博士班</h3>
-                <p><span class="years">2020-</span> | Graduate Degree Program of College of Electrical and Computer Engineering, NCTU/NYCU</p>
+                <h3>
+                    <span class="bilingual">國立交通大學/國立陽明交通大學 電機學院博士班</span>
+                    <span class="bilingual-en">Doctoral Degree Program of College of Electrical and Computer Engineering, National Chiao Tung University / National Yang Ming Chiao Tung University</span>
+                </h3>
+                <p><span class="years">2020-</span></p>
             </div>
             <div class="education-item">
-                <h3>北海道大学 大学院情報科学研究院 特別研究学生</h3>
-                <p><span class="years">2024-2025</span> | Faculty of Information Science and Technology, Hokkaido University, Japan</p>
+                <h3>
+                    <span class="bilingual">北海道大学 大学院情報科学研究院 特別研究学生</span>
+                    <span class="bilingual-en">Special Research Student, Faculty of Information Science and Technology, Hokkaido University, Japan</span>
+                </h3>
+                <p><span class="years">2024-2025</span></p>
             </div>
         </section>
-        
+
         <section id="awards">
-            <h2 class="section-title">獲獎經歷</h2>
+            <h2 class="section-title">
+                獲獎經歷 / Awards
+            </h2>
             <ul class="awards-list">
                 <li class="award-item">
                     <span class="award-year">2018</span> 真理盃全國日語辯論錦標賽 冠軍
@@ -379,7 +402,7 @@
                     <span class="award-year">2021</span> WOCC FET Best Paper Award
                 </li>
                 <li class="award-item">
-                    <span class="award-year">2021</span> 未來科技獎 (題目:智慧天使基地台–人本智慧精準通訊服務)
+                    <span class="award-year">2021</span> 未來科技獎 (題目:智慧天使基地台-人本智慧精準通訊服務)
                 </li>
                 <li class="award-item">
                     <span class="award-year">2023</span> 行動計算研討會 Best Paper Award
@@ -391,32 +414,50 @@
                     <span class="award-year">2023</span> 大專院校資訊應用服務創新競賽 無人機創新技術組-創意 第一名
                 </li>
                 <li class="award-item">
-                    <span class="award-year">2025</span> 通訊大賽 Mobileheros Global 第三名 (題目：B5G 訊號感知技術，實現高風險路口的人流監測與精準定位)
+                    <span class="award-year">2025</span> 通訊大賽 Mobileheros Global 第三名 (題目:B5G 訊號感知技術，實現高風險路口的人流監測與精準定位)
                 </li>
             </ul>
         </section>
-        
+
         <section id="skills">
-            <h2 class="section-title">語言能力</h2>
+            <h2 class="section-title">
+                語言能力 / Languages
+            </h2>
             <ul class="skills-list">
-                <li class="skill-item">中文</li>
-                <li class="skill-item">日語 (JLPT N1)</li>
-                <li class="skill-item">英語</li>
+                <li class="skill-item">
+                    中文 / Mandarin Chinese
+                </li>
+                <li class="skill-item">
+                    日語 (JLPT N1) / Japanese (JLPT N1)
+                </li>
+                <li class="skill-item">
+                    英語 / English
+                </li>
             </ul>
-            
-            <h2 class="section-title" style="margin-top: 30px;">研究領域</h2>
+
+            <h2 class="section-title" style="margin-top: 30px;">
+                研究領域 / Research Interests
+            </h2>
             <ul class="skills-list">
-                <li class="skill-item">人工智慧</li>
-                <li class="skill-item">無線通訊</li>
-                <li class="skill-item">無人機(UAV)</li>
+                <li class="skill-item">
+                    人工智慧 / Artificial Intelligence
+                </li>
+                <li class="skill-item">
+                    無線通訊 / Wireless Communications
+                </li>
+                <li class="skill-item">
+                    無人機(UAV) / Unmanned Aerial Vehicles (UAVs)
+                </li>
             </ul>
         </section>
-        
+
         <section id="publications">
-            <h2 class="section-title">論文投稿</h2>
+            <h2 class="section-title">
+                論文投稿 / Publications
+            </h2>
             <ul class="publications-list">
                 <li class="publication-item">
-                    C. -C. Chiu, A. -H. Tsai, H. -P. Lin, C. -Y. Lee and L. -C. Wang,  "Channel Modeling of Air-to-Ground Signal Measurement with Two-Ray Ground-Reflection Model for UAV Communication Systems," in 2021 30th Wireless and Optical Communications Conference (WOCC), 2021, pp. 251-256.
+                    C. -C. Chiu, A. -H. Tsai, H. -P. Lin, C. -Y. Lee and L. -C. Wang, "Channel Modeling of Air-to-Ground Signal Measurement with Two-Ray Ground-Reflection Model for UAV Communication Systems," in 2021 30th Wireless and Optical Communications Conference (WOCC), 2021, pp. 251-256.
                 </li>
                 <li class="publication-item">
                     邱佳詮, 張傳旭, 劉泓邑, 陳柏誌, 孫翊傑, 蔡昂勳, 王蒞君, "軟體定義無線電訊號量測結果與菲涅耳區之相關性分析," 全國電信研討會, 2022
@@ -430,12 +471,15 @@
             </ul>
         </section>
     </main>
-    
-
 
     <footer>
-        <p>&copy; 2025 邱佳詮 | Chia-Chuan Chiu</p>
+        <p>&copy; <span id="current-year"></span> 邱佳詮 | Chia-Chuan Chiu</p>
     </footer>
+
+    <script>
+        const currentYear = document.getElementById('current-year');
+
+        currentYear.textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
-
