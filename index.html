@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>邱佳詮 | Chia-Chuan Chiu</title>
+    <meta name="description" content="邱佳詮 Chia-Chuan Chiu — 國立陽明交通大學電機學院博士候選人，研究人工智慧、無線通訊與無人機。Ph.D. candidate at NYCU working on AI, wireless communications, and UAVs.">
+    <link rel="icon" href="fig/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="邱佳詮 | Chia-Chuan Chiu">
+    <meta property="og:description" content="國立陽明交通大學電機學院博士候選人｜AI × 無線通訊 × 無人機. Ph.D. candidate at NYCU.">
+    <meta property="og:url" content="https://s87315teve.github.io/">
+    <meta property="og:image" content="https://s87315teve.github.io/fig/og-image.jpg">
+    <meta property="og:locale" content="zh_TW">
+    <meta name="twitter:card" content="summary">
     <style>
         :root {
             --primary-color: #253046;
@@ -105,6 +114,44 @@
 
         section {
             padding: 40px 0;
+            scroll-margin-top: 56px;
+        }
+
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: rgba(37, 48, 70, 0.96);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .site-nav ul {
+            display: flex;
+            gap: 4px;
+            list-style: none;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .site-nav ul::-webkit-scrollbar {
+            display: none;
+        }
+
+        .site-nav a {
+            display: block;
+            padding: 12px 14px;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            border-bottom: 2px solid transparent;
+        }
+
+        .site-nav a:hover,
+        .site-nav a:focus-visible,
+        .site-nav a.active {
+            color: white;
+            border-bottom-color: white;
         }
 
         .section-title {
@@ -115,15 +162,6 @@
             font-size: 1.15rem;
             border-radius: 4px;
             letter-spacing: 0;
-        }
-
-        .about-me {
-            background-color: var(--light-bg);
-            padding: 28px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 30px;
-            min-height: 92px;
         }
 
         .contact-info {
@@ -184,13 +222,11 @@
             color: var(--accent-color);
         }
 
-        .awards-list,
         .skills-list,
         .publications-list {
             list-style: none;
         }
 
-        .award-item,
         .skill-item,
         .publication-item {
             margin-bottom: 15px;
@@ -202,7 +238,6 @@
             margin-bottom: 20px;
         }
 
-        .award-item::before,
         .skill-item::before,
         .publication-item::before {
             content: "•";
@@ -213,10 +248,61 @@
             font-weight: bold;
         }
 
-        .award-year {
+        .publication-item .me {
             font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .timeline {
+            list-style: none;
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background-color: var(--border-color);
+        }
+
+        .timeline-year {
+            position: relative;
+            padding-bottom: 22px;
+        }
+
+        .timeline-year:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-year::before {
+            content: "";
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: white;
+            border: 3px solid var(--secondary-color);
+        }
+
+        .timeline-year h3 {
+            font-size: 1.1rem;
             color: var(--accent-color);
-            margin-right: 10px;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+
+        .timeline-year ul {
+            list-style: none;
+        }
+
+        .award-item {
+            padding: 4px 0;
         }
 
         .award-source {
@@ -316,7 +402,10 @@
             <div class="header-content">
                 <div class="profile-section">
                     <div class="profile-image">
-                        <img src="fig/chiu.JPG" alt="邱佳詮的個人照片">
+                        <picture>
+                            <source srcset="fig/chiu.webp" type="image/webp">
+                            <img src="fig/chiu.JPG" alt="邱佳詮的個人照片" width="200" height="200">
+                        </picture>
                     </div>
                     <div class="name-title">
                         <h1>邱佳詮</h1>
@@ -332,11 +421,20 @@
         </div>
     </header>
 
-    <main class="container">
-        <section id="about">
-            <h2 class="section-title">關於我 / About</h2>
-            <div class="about-me" aria-label="About Chia-Chuan Chiu"></div>
+    <nav class="site-nav" aria-label="頁面導覽 / Page navigation">
+        <div class="container">
+            <ul>
+                <li><a href="#contact">聯絡 Contact</a></li>
+                <li><a href="#education">學歷 Education</a></li>
+                <li><a href="#awards">獲獎 Awards</a></li>
+                <li><a href="#skills">能力與研究 Skills</a></li>
+                <li><a href="#publications">論文 Publications</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <main class="container">
+        <section id="contact">
             <h2 class="section-title">聯絡方式 / Contact</h2>
             <div class="contact-info">
                 <div class="contact-item">
@@ -407,54 +505,95 @@
             <h2 class="section-title">
                 獲獎經歷 / Awards
             </h2>
-            <ul class="awards-list">
-                <li class="award-item">
-                    <span class="award-year">2018</span> 真理盃全國日語辯論錦標賽 冠軍
+            <ol class="timeline">
+                <li class="timeline-year">
+                    <h3>2026</h3>
+                    <ul>
+                        <li class="award-item">
+                            未來科技獎 (題目:同行致遠: 整合軟體無線電與人工智慧之長距離多重中繼點無人機通訊系統)
+                        </li>
+                    </ul>
                 </li>
-                <li class="award-item">
-                    <span class="award-year">2018</span> 真理盃全國日語辯論錦標賽 最佳辯士
+                <li class="timeline-year">
+                    <h3>2025</h3>
+                    <ul>
+                        <li class="award-item">
+                            通訊大賽 Mobileheroes Global 第三名 (題目:B5G 訊號感知技術，實現高風險路口的人流監測與精準定位)
+                            <a class="award-source" href="https://www.techbang.com/posts/126131-2025-telecom-awards-b5g-ai-esg" target="_blank" rel="noopener noreferrer" title="T客邦：2025通訊大賽頒獎典禮暨成果展"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>新聞</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="award-item">
-                    <span class="award-year">2018</span> 真理盃全國日語辯論錦標賽 最佳質疑
+                <li class="timeline-year">
+                    <h3>2024</h3>
+                    <ul>
+                        <li class="award-item">
+                            GenAI時代的應用與落地策略 第二名 (題目: 3D Channel GPT：大型語言模型於無線通道預測之應用)
+                            <a class="award-source" href="https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?id=0000690545_QLU46OKR535NB949UILOC" target="_blank" rel="noopener noreferrer" title="DIGITIMES 報導"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>新聞</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="award-item">
-                    <span class="award-year">2019</span> 交大日語辯論國際大會 Friendship獎
+                <li class="timeline-year">
+                    <h3>2023</h3>
+                    <ul>
+                        <li class="award-item">
+                            行動計算研討會 Best Paper Award
+                        </li>
+                        <li class="award-item">
+                            第一回國防應用無人機挑戰賽 優等
+                            <a class="award-source" href="https://www.chttl.com.tw/_news/news-36.html" target="_blank" rel="noopener noreferrer" title="中華電信研究院 新聞：國防應用無人機挑戰賽榮獲佳績"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>合作單位公告</a>
+                        </li>
+                        <li class="award-item">
+                            大專院校資訊應用服務創新競賽 無人機創新技術組-創意 第一名
+                        </li>
+                    </ul>
                 </li>
-                <li class="award-item">
-                    <span class="award-year">2019</span> 文藻盃全國日語辯論比賽 冠軍
-                    <a class="award-source" href="https://c025.wzu.edu.tw/category/149722" target="_blank" rel="noopener noreferrer" title="文藻外語大學 第十七屆文藻盃日語辯論比賽 成績公告"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>官方公告</a>
+                <li class="timeline-year">
+                    <h3>2021</h3>
+                    <ul>
+                        <li class="award-item">
+                            WOCC FET Best Paper Award
+                        </li>
+                        <li class="award-item">
+                            未來科技獎 (題目:智慧天使基地台-人本智慧精準通訊服務)
+                            <a class="award-source" href="https://www.futuretech.org.tw/futuretech/index.php?action=product_detail&amp;prod_no=P0008700006186" target="_blank" rel="noopener noreferrer" title="未來科技館 FUTEX 技術展示頁"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>官方展示</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="award-item">
-                    <span class="award-year">2020</span> 全國大專院校智慧創新暨跨域整合創作競賽 數位永續科技組 第三名
+                <li class="timeline-year">
+                    <h3>2020</h3>
+                    <ul>
+                        <li class="award-item">
+                            全國大專院校智慧創新暨跨域整合創作競賽 數位永續科技組 第三名
+                        </li>
+                    </ul>
                 </li>
-                <li class="award-item">
-                    <span class="award-year">2021</span> WOCC FET Best Paper Award
+                <li class="timeline-year">
+                    <h3>2019</h3>
+                    <ul>
+                        <li class="award-item">
+                            交大日語辯論國際大會 Friendship獎
+                        </li>
+                        <li class="award-item">
+                            文藻盃全國日語辯論比賽 冠軍
+                            <a class="award-source" href="https://c025.wzu.edu.tw/category/149722" target="_blank" rel="noopener noreferrer" title="文藻外語大學 第十七屆文藻盃日語辯論比賽 成績公告"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>官方公告</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="award-item">
-                    <span class="award-year">2021</span> 未來科技獎 (題目:智慧天使基地台-人本智慧精準通訊服務)
-                    <a class="award-source" href="https://www.futuretech.org.tw/futuretech/index.php?action=product_detail&amp;prod_no=P0008700006186" target="_blank" rel="noopener noreferrer" title="未來科技館 FUTEX 技術展示頁"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>官方展示</a>
+                <li class="timeline-year">
+                    <h3>2018</h3>
+                    <ul>
+                        <li class="award-item">
+                            真理盃全國日語辯論錦標賽 冠軍
+                        </li>
+                        <li class="award-item">
+                            真理盃全國日語辯論錦標賽 最佳辯士
+                        </li>
+                        <li class="award-item">
+                            真理盃全國日語辯論錦標賽 最佳質疑
+                        </li>
+                    </ul>
                 </li>
-                <li class="award-item">
-                    <span class="award-year">2023</span> 行動計算研討會 Best Paper Award
-                </li>
-                <li class="award-item">
-                    <span class="award-year">2023</span> 第一回國防應用無人機挑戰賽 優等
-                    <a class="award-source" href="https://www.chttl.com.tw/_news/news-36.html" target="_blank" rel="noopener noreferrer" title="中華電信研究院 新聞：國防應用無人機挑戰賽榮獲佳績"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>合作單位公告</a>
-                </li>
-                <li class="award-item">
-                    <span class="award-year">2023</span> 大專院校資訊應用服務創新競賽 無人機創新技術組-創意 第一名
-                </li>
-                <li class="award-item">
-                    <span class="award-year">2024</span> GenAI時代的應用與落地策略 第二名 (題目: 3D Channel GPT：大型語言模型於無線通道預測之應用)
-                </li>
-                <li class="award-item">
-                    <span class="award-year">2025</span> 通訊大賽 Mobileheroes Global 第三名 (題目:B5G 訊號感知技術，實現高風險路口的人流監測與精準定位)
-                    <a class="award-source" href="https://www.techbang.com/posts/126131-2025-telecom-awards-b5g-ai-esg" target="_blank" rel="noopener noreferrer" title="T客邦：2025通訊大賽頒獎典禮暨成果展"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>新聞</a>
-                </li>
-                <li class="award-item">
-                    <span class="award-year">2026</span> 未來科技獎 (題目:同行致遠: 整合軟體無線電與人工智慧之長距離多重中繼點無人機通訊系統)
-                </li>
-            </ul>
+            </ol>
         </section>
 
         <section id="skills">
@@ -495,16 +634,16 @@
             </h2>
             <ul class="publications-list">
                 <li class="publication-item">
-                    C. -C. Chiu, A. -H. Tsai, H. -P. Lin, C. -Y. Lee and L. -C. Wang, "Channel Modeling of Air-to-Ground Signal Measurement with Two-Ray Ground-Reflection Model for UAV Communication Systems," in 2021 30th Wireless and Optical Communications Conference (WOCC), 2021, pp. 251-256.
+                    <span class="me">C. -C. Chiu</span>, A. -H. Tsai, H. -P. Lin, C. -Y. Lee and L. -C. Wang, "Channel Modeling of Air-to-Ground Signal Measurement with Two-Ray Ground-Reflection Model for UAV Communication Systems," in 2021 30th Wireless and Optical Communications Conference (WOCC), 2021, pp. 251-256.
                 </li>
                 <li class="publication-item">
-                    邱佳詮, 張傳旭, 劉泓邑, 陳柏誌, 孫翊傑, 蔡昂勳, 王蒞君, "軟體定義無線電訊號量測結果與菲涅耳區之相關性分析," 全國電信研討會, 2022
+                    <span class="me">邱佳詮</span>, 張傳旭, 劉泓邑, 陳柏誌, 孫翊傑, 蔡昂勳, 王蒞君, "軟體定義無線電訊號量測結果與菲涅耳區之相關性分析," 全國電信研討會, 2022
                 </li>
                 <li class="publication-item">
-                    邱佳詮, 王蒞君, "感測器融合技術應用於無人機空對地訊號強度預測之研究," 行動計算研討會, 2023
+                    <span class="me">邱佳詮</span>, 王蒞君, "感測器融合技術應用於無人機空對地訊號強度預測之研究," 行動計算研討會, 2023
                 </li>
                 <li class="publication-item">
-                    C.-C. Chiu, M.-C. Lee, Y.-S. Chao, and L.-C. Wang, "PRISM: Physics-Radio Integrated Simulation and Management for V2X Digital Twins," IEEE VTC2026-Spring, accepted.
+                    <span class="me">C.-C. Chiu</span>, M.-C. Lee, Y.-S. Chao, and L.-C. Wang, "PRISM: Physics-Radio Integrated Simulation and Management for V2X Digital Twins," IEEE VTC2026-Spring, accepted.
                 </li>
             </ul>
         </section>
@@ -518,6 +657,19 @@
         const currentYear = document.getElementById('current-year');
 
         currentYear.textContent = new Date().getFullYear();
+
+        const navLinks = document.querySelectorAll('.site-nav a');
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    navLinks.forEach((link) => {
+                        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+                    });
+                });
+            }, { rootMargin: '-40% 0px -55% 0px' });
+            document.querySelectorAll('main section[id]').forEach((section) => observer.observe(section));
+        }
     </script>
 </body>
 </html>

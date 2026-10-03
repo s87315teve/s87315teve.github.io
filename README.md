@@ -35,7 +35,7 @@ Special Research Student at Hokkaido University, Japan (2024–2025).
 ```
 .
 ├── index.html            # 網站主頁（單一 HTML，內嵌 CSS）
-├── fig/                  # 圖片資源
+├── fig/                  # 圖片資源（照片 WebP/JPG、OG 預覽圖、favicon）
 └── archive/              # 舊版頁面封存（noindex，不從主頁連結）
 ```
 
