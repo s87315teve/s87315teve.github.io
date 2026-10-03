@@ -38,14 +38,3 @@ Special Research Student at Hokkaido University, Japan (2024–2025).
 ├── fig/                  # 圖片資源（照片 WebP/JPG、OG 預覽圖、favicon）
 └── archive/              # 舊版頁面封存（noindex，不從主頁連結）
 ```
-
-## 本地預覽 / Local Preview
-
-純靜態網站，無需建置。 / Static site, no build step required.
-
-```bash
-python3 -m http.server 8000
-# 開啟 http://localhost:8000
-```
-
-推送到 `master` 分支後由 GitHub Pages 自動部署。 / Deployed automatically by GitHub Pages on push to `master`.
