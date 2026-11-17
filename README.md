@@ -19,8 +19,8 @@ Special Research Student at Hokkaido University, Japan (2024–2025).
 
 ## 精選論文 / Selected Publications
 
-- C.-C. Chiu, M.-C. Lee, Y.-S. Chao, and L.-C. Wang, "PRISM: Physics-Radio Integrated Simulation and Management for V2X Digital Twins," *2026 IEEE 103rd Vehicular Technology Conference (VTC2026-Spring)*, Nice, France, 2026, pp. 1-7, doi: [10.1109/VTC2026-Spring68026.2026.11757340](https://doi.org/10.1109/VTC2026-Spring68026.2026.11757340).
-- C.-C. Chiu, A.-H. Tsai, H.-P. Lin, C.-Y. Lee, and L.-C. Wang, "Channel Modeling of Air-to-Ground Signal Measurement with Two-Ray Ground-Reflection Model for UAV Communication Systems," *WOCC 2021*.
+- C. -C. Chiu, M. -C. Lee, Y. -S. Chao and L. -C. Wang, "PRISM: Physics-Radio Integrated Simulation and Management for V2X Digital Twins," *2026 IEEE 103rd Vehicular Technology Conference (VTC2026-Spring)*, 2026, pp. 1-7.
+- C. -C. Chiu, A. -H. Tsai, H. -P. Lin, C. -Y. Lee and L. -C. Wang, "Channel Modeling of Air-to-Ground Signal Measurement with Two-Ray Ground-Reflection Model for UAV Communication Systems," *2021 30th Wireless and Optical Communications Conference (WOCC)*, 2021, pp. 251-256.
 
 完整論文與獲獎列表請見網站。 / See the website for the full list of publications and awards.
 
